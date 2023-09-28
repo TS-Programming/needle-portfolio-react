@@ -1,0 +1,12 @@
+{
+  "useRapier": true,
+  "license": null,
+  "gzip": false,
+  "allowHotReload": true,
+  "generator": "Unity 2022.3.4f1, Needle Engine Integration @3.17.0",
+  "needleEditor": null,
+  "sceneName": "Sand Box",
+  "meta": null,
+  "absolutePath": "https://localhost:3000",
+  "deployOnly": false
+}
