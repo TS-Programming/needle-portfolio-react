@@ -52,16 +52,6 @@ function Home() {
             >
               Games
             </Button>
-            {/* <Button
-              color="white"
-              variant="ghost"
-              h="64px" // Set to the calculated height
-              borderRadius={0}
-              href="./GamePages/pentago"
-              _hover={{ backgroundColor: 'red.700', color: 'white' }}
-            >
-              Resume
-            </Button> */}
             <a href="/pdf/temp-resume-2023.pdf" target="_blank" rel="noopener noreferrer">
                 <Button
                     color="white"
