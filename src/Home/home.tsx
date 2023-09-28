@@ -26,25 +26,8 @@ function Home() {
     ref.current.scrollIntoView({ behavior: 'smooth' });
   };
 
-  // Dark theme configuration
-  const theme = extendTheme({
-    config: {
-      initialColorMode: 'dark',
-      useSystemColorMode: false,
-    },
-    styles: {
-      global: {
-        body: {
-          bg: '#181414', // Set the background color for dark mode
-          color: 'white', // Set the text color for dark mode
-        },
-      },
-    },
-  });
-
+  
   return (
-    <ChakraProvider theme={theme}>
-      {/* <ColorModeScript initialColorMode={theme.config.initialColorMode} /> */}
       <Container maxW="100%" p={0}>
         <Flex as="nav" p={4} justifyContent="center" bg="#303030" alignItems="center" h="64px">
           <Box display="flex" alignItems="center" h="full">
@@ -121,7 +104,6 @@ function Home() {
           <GAME_GRID />
         </Box>
       </Container>
-    </ChakraProvider>
   );
 }
 
