@@ -26,7 +26,7 @@ function Home() {
     ref.current.scrollIntoView({ behavior: 'smooth' });
   };
 
-  
+
   return (
       <Container maxW="100%" p={0}>
         <Flex as="nav" p={4} justifyContent="center" bg="#303030" alignItems="center" h="64px">
@@ -52,7 +52,7 @@ function Home() {
             >
               Games
             </Button>
-            <Button
+            {/* <Button
               color="white"
               variant="ghost"
               h="64px" // Set to the calculated height
@@ -61,7 +61,19 @@ function Home() {
               _hover={{ backgroundColor: 'red.700', color: 'white' }}
             >
               Resume
-            </Button>
+            </Button> */}
+            <a href="/pdf/temp-resume-2023.pdf" target="_blank" rel="noopener noreferrer">
+                <Button
+                    color="white"
+                    variant="ghost"
+                    h="64px" // Set to the calculated height
+                    borderRadius={0}
+                    _hover={{ backgroundColor: 'red.700', color: 'white' }}
+                >
+                    Resume
+                </Button>
+            </a>
+
 
           </Box>
         </Flex>
