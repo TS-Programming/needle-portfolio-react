@@ -26,25 +26,8 @@ function Home() {
     ref.current.scrollIntoView({ behavior: 'smooth' });
   };
 
-  // Dark theme configuration
-  const theme = extendTheme({
-    config: {
-      initialColorMode: 'dark',
-      useSystemColorMode: false,
-    },
-    styles: {
-      global: {
-        body: {
-          bg: '#181414', // Set the background color for dark mode
-          color: 'white', // Set the text color for dark mode
-        },
-      },
-    },
-  });
 
   return (
-    <ChakraProvider theme={theme}>
-      {/* <ColorModeScript initialColorMode={theme.config.initialColorMode} /> */}
       <Container maxW="100%" p={0}>
         <Flex as="nav" p={4} justifyContent="center" bg="#303030" alignItems="center" h="64px">
           <Box display="flex" alignItems="center" h="full">
@@ -69,7 +52,7 @@ function Home() {
             >
               Games
             </Button>
-            <Button
+            {/* <Button
               color="white"
               variant="ghost"
               h="64px" // Set to the calculated height
@@ -78,7 +61,19 @@ function Home() {
               _hover={{ backgroundColor: 'red.700', color: 'white' }}
             >
               Resume
-            </Button>
+            </Button> */}
+            <a href="/pdf/temp-resume-2023.pdf" target="_blank" rel="noopener noreferrer">
+                <Button
+                    color="white"
+                    variant="ghost"
+                    h="64px" // Set to the calculated height
+                    borderRadius={0}
+                    _hover={{ backgroundColor: 'red.700', color: 'white' }}
+                >
+                    Resume
+                </Button>
+            </a>
+
 
           </Box>
         </Flex>
@@ -121,7 +116,6 @@ function Home() {
           <GAME_GRID />
         </Box>
       </Container>
-    </ChakraProvider>
   );
 }
 

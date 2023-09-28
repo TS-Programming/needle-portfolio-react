@@ -7,7 +7,7 @@ const GameGrid = () => {
     const gameData = [
         {
             imageUrl: "https://lineinlime.com/wp-content/uploads/2018/05/image_20180518_104325.jpg",
-            linkUrl: "/game-page-1",
+            linkUrl: "/pentago",
             gameTags: ["Action", "Multiplayer"],
             description: "Short game description.",
             features: ["Feature 1", "Feature 2"],
@@ -16,7 +16,7 @@ const GameGrid = () => {
       // ... Add more game objects similar to above ...
       {
         imageUrl: "https://lineinlime.com/wp-content/uploads/2018/05/image_20180518_104325.jpg",
-        linkUrl: "/game-page-1",
+        linkUrl: "/mini-games",
         gameTags: ["Action", "Multiplayer"],
         description: "Short game description.",
         features: ["Feature 1", "Feature 2"],
