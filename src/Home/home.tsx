@@ -52,7 +52,7 @@ function Home() {
             >
               Games
             </Button>
-            <a href="/pdf/temp-resume-2023.pdf" target="_blank" rel="noopener noreferrer">
+            <a href="/pdf/resume-fall-2023.pdf" target="_blank" rel="noopener noreferrer">
                 <Button
                     color="white"
                     variant="ghost"
