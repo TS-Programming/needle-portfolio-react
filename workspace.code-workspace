@@ -5,6 +5,10 @@
     },
     {
       "path": "./node_modules/@needle-tools/engine"
+    },
+    {
+      "name": "@needle-tools/samples-scripts",
+      "path": "node_modules/@needle-tools/samples-scripts"
     }
   ],
   "settings": {

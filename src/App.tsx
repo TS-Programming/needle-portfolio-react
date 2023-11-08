@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Home from './Home/home';
 import Pentago from './GamePages/pentago';
 import MiniGames from './GamePages/miniGames';
+import TopBar from './TopBar';
 
 import {
   Button,
@@ -36,6 +37,7 @@ function App() {
   return (
     <ChakraProvider theme={theme}>
       <Router>
+        {/* <TopBar /> */}
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/pentago" element={<Pentago />} />

@@ -1,20 +1,15 @@
 import React, { useRef } from 'react';
-import { NeedleEngine } from '../NeedleEngine';
-import { ContextRegistry, GameObject, Rigidbody } from '@needle-tools/engine';
-import { Vector3 } from 'three';
 import {
   Button,
   Box,
   Text,
   Container,
   Flex,
-  ChakraProvider,
-  extendTheme,
-  ColorModeScript
 } from '@chakra-ui/react';
 import ABOUT_TEXT from './about';
 import GAME_GRID from './gameGrid';
 import NEEDLE_GAMES from '../NeedleGames';
+import TOP_BAR from '../TopBar';
 
 function Home() {
   // Refs for sections on the page
@@ -29,7 +24,8 @@ function Home() {
 
   return (
       <Container maxW="100%" p={0}>
-        <Flex as="nav" p={4} justifyContent="center" bg="#303030" alignItems="center" h="64px">
+        <TOP_BAR section1Ref={section1Ref} section2Ref={section2Ref} scrollToRef={scrollToRef}/>
+        {/* <Flex as="nav" p={4} justifyContent="center" bg="#303030" alignItems="center" h="64px">
           <Box display="flex" alignItems="center" h="full">
             <Text fontSize="2xl" mr="20px">Tanner Samples</Text>
             <Button
@@ -63,16 +59,15 @@ function Home() {
                     Resume
                 </Button>
             </a>
-
-
           </Box>
-        </Flex>
+        </Flex> */}
         <Box>
+        {/* <NEEDLE_GAMES/> */}
           <Box ref={section1Ref}>
             <ABOUT_TEXT />
           </Box>
           <Box
-            ref={section2Ref}
+            ref={section2Ref} // bug shouldnt be section2 ref twice
             mt="50px"
             // mb="100px"
             d="flex"
