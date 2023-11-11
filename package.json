@@ -13,16 +13,15 @@
 	  "@chakra-ui/react": "^2.8.1",
 	  "@emotion/react": "^11.11.1",
 	  "@emotion/styled": "^11.11.0",
-	  "@needle-tools/engine": "^3.20.1",
+	  "@needle-tools/engine": "^3.23.0",
 	  "framer-motion": "^10.16.4",
 	  "react": "^18.0.0",
 	  "react-dom": "^18.0.0",
 	  "react-router-dom": "^6.16.0",
-	  "three": "npm:@needle-tools/three@^0.154.3",
-	  "@needle-tools/samples-scripts": "file:./../../../Games/needle_react/Library/PackageCache/com.needle.engine-samples@0.12.0/Runtime/_Shared/SampleScripts~"
+	  "three": "npm:@needle-tools/three@^0.154.3"
 	},
   "devDependencies": {
-	  "@needle-tools/helper": "^1.4.0",
+	  "@needle-tools/helper": "^1.6.0",
 	  "@types/three": "0.154.0",
 	  "@vitejs/plugin-basic-ssl": "^1.0.1",
 	  "@vitejs/plugin-react": "^1.3.0",

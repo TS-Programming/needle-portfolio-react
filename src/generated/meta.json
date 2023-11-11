@@ -1,11 +1,11 @@
 {
-  "allowHotReload": true,
-  "gzip": false,
-  "generator": "Unity 2022.3.4f1, Needle Engine Integration @3.20.1",
   "useRapier": true,
   "license": null,
+  "allowHotReload": true,
+  "gzip": false,
+  "generator": "Unity 2022.3.12f1, Needle Engine Integration @3.23.0",
   "needleEditor": null,
-  "sceneName": "Site",
+  "sceneName": "New Scene",
   "meta": null,
   "absolutePath": "https://localhost:3000",
   "deployOnly": false
