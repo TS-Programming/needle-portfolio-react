@@ -15,7 +15,20 @@ const TopBar: React.FC = () => {
   };
   
   return (
-    <Flex as="nav" p={4} justifyContent="center" bg="#303030" alignItems="center" h="64px">
+    // <Flex as="nav" p={4} justifyContent="center" bg="#303030" alignItems="center" h="64px">
+    <Flex
+      as="nav"
+      position="fixed" // Fixed position
+      top={0} // Stick to the top
+      left={0} // Align to the left
+      right={0} // Align to the right
+      zIndex="sticky" // Ensure it stays on top of other content
+      p={4}
+      justifyContent="center"
+      bg="#303030"
+      alignItems="center"
+      h="64px"
+    >
       <Box display="flex" alignItems="center" h="full">
         <Text fontSize="2xl" mr="20px">Tanner Samples</Text>
         <Button

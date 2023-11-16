@@ -21,20 +21,16 @@ function Home() {
 
 
   return (
-    <Container maxW="100%" p={0}>
-      {/* <TOP_BAR section1Ref={section1Ref} section2Ref={section2Ref} scrollToRef={scrollToRef}/> */}
+    <Container maxW="100%" p={0} pt="64px">
       <TOP_BAR/>
-
       <Box>
         <NEEDLE_GAMES/>
 
-        {/* About Section with ID */}
         <Box id="about-section">
           <ABOUT_TEXT />
         </Box>
 
         <Box
-          // ref={section2Ref}
           id="games-section"
           mt="50px"
           mb="100px"

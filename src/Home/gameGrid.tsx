@@ -21,7 +21,7 @@ const GameGrid = () => {
             features: ["3D adaptation of Pentago, playable on both mobile and desktop with dynamic camera perspectives", 
                         "Highly polished presentation with charming music and sound effects",
                         "Advanced AI opponent with asynchronous Min-Max and Alpha-Beta pruning mechanics"],
-            bannerLabel: "New Release"
+            // bannerLabel: "New Release"
         },
         {
             imageUrl: "https://lineinlime.com/wp-content/uploads/2018/05/image_20180518_104325.jpg",
