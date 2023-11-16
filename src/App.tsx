@@ -5,16 +5,11 @@ import Home from './Home/home';
 import Pentago from './GamePages/pentago';
 import MiniGames from './GamePages/miniGames';
 import TopBar from './TopBar';
+import { ScrollProvider } from './ScrollContext';
 
 import {
-  Button,
-  Box,
-  Text,
-  Container,
-  Flex,
   ChakraProvider,
   extendTheme,
-  ColorModeScript
 } from '@chakra-ui/react';
 
 function App() {
@@ -36,14 +31,15 @@ function App() {
 
   return (
     <ChakraProvider theme={theme}>
-      <Router>
-        {/* <TopBar /> */}
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/pentago" element={<Pentago />} />
-          <Route path="/mini-games" element={<MiniGames />} />
-        </Routes>
-      </Router>
+      {/* <ScrollProvider > */}
+        <Router>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/pentago" element={<Pentago />} />
+            <Route path="/mini-games" element={<MiniGames />} />
+          </Routes>
+        </Router>
+      {/* </ScrollProvider> */}
    </ChakraProvider>
   );
 }

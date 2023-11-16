@@ -1,13 +1,19 @@
-import React from 'react';
-import {
-  Button,
-  Box,
-  Text,
-  Flex,
-} from '@chakra-ui/react';
+import React, { useContext }  from 'react';
+import {Button, Box, Text, Flex,} from '@chakra-ui/react';
+import { useNavigate } from 'react-router-dom';
 
 
-function TopBar({ section1Ref, section2Ref, scrollToRef }) {
+const TopBar: React.FC = () => {
+  const navigate = useNavigate();
+
+  const navigateAndScroll = (sectionId: string) => {
+    navigate('/');
+    setTimeout(() => {
+      const section = document.getElementById(sectionId);
+      section?.scrollIntoView({ behavior: 'smooth' });
+    }, 0); // Timeout to allow the DOM to update
+  };
+  
   return (
     <Flex as="nav" p={4} justifyContent="center" bg="#303030" alignItems="center" h="64px">
       <Box display="flex" alignItems="center" h="full">
@@ -17,7 +23,7 @@ function TopBar({ section1Ref, section2Ref, scrollToRef }) {
           variant="ghost"
           h="64px"
           borderRadius={0}
-          onClick={() => scrollToRef(section1Ref)}
+          onClick={() => navigateAndScroll('about-section')}
           _hover={{ backgroundColor: 'red.700', color: 'white' }}
         >
           About
@@ -27,7 +33,7 @@ function TopBar({ section1Ref, section2Ref, scrollToRef }) {
           variant="ghost"
           h="64px"
           borderRadius={0}
-          onClick={() => scrollToRef(section2Ref)}
+          onClick={() => navigateAndScroll('games-section')}
           _hover={{ backgroundColor: 'red.700', color: 'white' }}
         >
           Games
