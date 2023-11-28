@@ -37,7 +37,7 @@ public IEnumerator Play()
 }`;
 
 
-export const humanSnippetDescription: string = `For human players, the coroutine yields in steps waiting for input and updates to visual representations before continuing. It first waits for a piece to be dropped on the board, then checks for a winner in case the player dropped into five-in-a-row. If they have, the turn ends early. Otherwise, it proceeds to handle the rotation of a board quadrant. Before ending the turn, SetLastBoard() is called, updating a variable in the game manager with the new game state. This facilitates the callback function to determine that visuals do not need to be updated.`;
+export const humanSnippetDescription: string = `For human players, the coroutine yields in steps waiting for input and updates to visual representations before continuing. It first waits for a piece to be dropped on the board, then checks for a winner in case the player dropped into five-in-a-line. If they have, the turn ends early. Otherwise, it proceeds to handle the rotation of a board quadrant. Before ending the turn, SetLastBoard() is called, updating a variable in the game manager with the new game state. This facilitates the callback function to determine that visuals do not need to be updated.`;
 
 
 export const humanSnippet: string = `    
@@ -113,3 +113,41 @@ IEnumerator OnMoveComplete()
 
     moveComplete = true;
 }`;
+
+
+
+export const aIIntroDescription: string = `I tried a number of unsucessful algorithms, namely Alpha-Beta Pruning and Monte Carlo Tree Search, before finding success with this Java implementaion (and converting it to C#) by forsythe: https://github.com/forsythe/pentago. It's also an Alpha-Beta Pruning algorithm, but its huerstic evaluation is significantly faster thanks to the way it represents the board state. Regardless of the algorithm, there needs to be some way of counting lines of 3, 4, and 5 pieces. Iterating through every index of an array to check for lines is too slow. The brilliance of forsythe's algorithm is that it uses bitboards to represent the board state, allowing for the use of bitwise operations to check for lines.
+
+The implementation represents a board as a length-two array of longs, one for the white pieces and one for the black pieces. The longs have a digit for every cell, and 1 represents a piece in that cell. Every possible 3, 4, and 5 in-a-line is represented as a mask, and the bitwise AND of a mask and a board will be non-zero if the board contains that line. Therefore, checking for a winner is as simple as iterating through the masks for 5-in-a-line.
+`;
+
+
+export const hasWinnerSnippet: string = `
+public int HasWinner() { 
+    bool P_MAXWin = false, P_MINWin = false;
+
+    foreach (long mask in masks_5_consec) 
+        if ((mask & board[P_MAX]) == mask) {
+            P_MAXWin = true;
+            break;
+        }
+    
+    foreach (long mask in masks_5_consec)
+        if ((mask & board[P_MIN]) == mask) {
+            P_MINWin = true;
+            break;
+        }
+
+    // -1 no winner, 0 P_MAX, 1 P_MIN, 2 tie
+    if (P_MAXWin != P_MINWin)
+        return P_MAXWin ? 0 : 1;
+    else if ((P_MAXWin && P_MINWin) || (board[P_MAX] | board[P_MIN]) == 0b111111111111111111111111111111111111L)
+        return 2;
+    else
+        return -1;
+}
+`;
+
+export const aiOutro: string = `
+This project wouldn't be possible without the bitboard implementation. It's a great example of how a simple data structure can make a huge difference in performance. I'll keep my eye out for other places where bitboards can be used for optimization in the future.
+`;

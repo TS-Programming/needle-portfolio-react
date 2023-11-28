@@ -9,7 +9,7 @@ interface DownloadLinkProps {
 
 const DownloadLink: React.FC<DownloadLinkProps> = ({ url, text }) => {
   return (
-    <Box textAlign="center" mt="2">
+    <Box textAlign="center"  mb="8">
       <Link href={url} isExternal>
         <Icon as={DownloadIcon} mr="2" />{text}
       </Link>
