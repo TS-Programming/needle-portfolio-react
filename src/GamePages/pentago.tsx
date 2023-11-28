@@ -71,7 +71,7 @@ const Pentago = () => {
       <Box mt="0px" mb="100px" ml="150px" mr="150px">
       <Box textAlign="center" mb="25px">
       <Text fontSize="6xl" fontWeight="bold">
-        PENTAGO
+        PENTAGO 3D
       </Text>
       <Download_Link url="https://doublemeta.itch.io/pentago" text="Download Game" />
 
@@ -92,7 +92,8 @@ const Pentago = () => {
       </Box>
     </Box>
     <Text fontSize="4xl" fontWeight="bold" textAlign="center" >About Pentago</Text>
-    <Text mb= "8">The famous abstract strategy game invented by Tomas Flodén. It's like Tic Tac Toe, but much deeper. Five-in-a-line wins, and a quadrant must be rotated each turn. Play versus the computer or a friend.</Text>
+    <Text mb="1">The famous abstract strategy game invented by Tomas Flodén. It's like Tic Tac Toe, but much deeper. Five-in-a-line wins, and a quadrant must be rotated each turn. Play versus the computer or a friend.</Text>
+    <Text mb="8">My goal with this project was to make a highly polished 3D game. By limiting the scope to an existing board game, I was able to fully realize my vision complete with challenging AI, stunning visuals, charming music/SFX, camera control, customization, a tutorial, and more! </Text>
 
 
         <AspectRatio ratio={16 / 9} maxWidth="900px" width="full" margin="auto">
