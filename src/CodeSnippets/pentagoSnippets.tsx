@@ -1,6 +1,6 @@
 // PentagoCodeSnippet.tsx
 
-export const introDescription: string = `One of the challeneges of this project was implementing a game loop that could handle any combination of human or AI players. A turn in Pentago consists of 3 steps: placing the piece, chosing a quadrent to rotate, and deciding which direction to rotate the quadrant. The nature in which these decisions are made vary dirastically between human and AI players. Human turns need input polling and visual feedback during each step of the process, while AI turns need asynchronous processing time to make all the decisions before any visual updates are made.
+export const introDescription: string = `One of the challeneges of this project was implementing a game loop that could handle any combination of human or AI players. A turn in Pentago consists of 3 steps: placing the piece, chosing a quadrent to rotate, and deciding which direction to rotate the quadrant. The nature in which these decisions are made vary drastically between human and AI players. Human turns need input polling and visual feedback during each step of the process, while AI turns need asynchronous processing time to make all the decisions before any visual updates are made.
 
 The solution I came up with was to use an interface to represent the players, the crux of which is the function "IEnumerator MakeMove(Board b, IEnumerator callback)", abstracting away the differences between human and AI players during decision making, relying on a callback function to ensure parity following the decision.
 `;
@@ -15,7 +15,7 @@ public interface IPlayer
 }`;
 
 
-export const gameManagerSnippetDescription: string = `This allows the game manager's "Play" function to be written in a way that is agnostic to the type of player. It simply alternates turns betwen the two players until the game is over.
+export const gameManagerSnippetDescription: string = `This allows the game manager's "Play" function to be written in a way that is agnostic to the type of player. It simply alternates turns between the two players until the game is over.
 `;
 
 
@@ -92,7 +92,7 @@ public async Task GenerateAIMove(Board b, PentagoAI brain, int player)
 }`;
 
 
-export const callbackSnippetDescription: string = `The callback function shown here is responsible for updationg parameters before the next turn. In the case of AI turns, there will be a descrepancy between the internal game state and the visuals, prompting the conditonal to evaluate to true and the visuals to be updated.
+export const callbackSnippetDescription: string = `The callback function shown here is responsible for updating parameters before the next turn. In the case of AI turns, there will be a descrepancy between the internal game state and the visuals, prompting the conditonal to evaluate to true and the visuals to be updated.
 `;
 
 
@@ -116,7 +116,7 @@ IEnumerator OnMoveComplete()
 
 
 
-export const aIIntroDescription: string = `I tried a number of unsucessful algorithms, namely Alpha-Beta Pruning and Monte Carlo Tree Search, before finding success with this Java implementaion (and converting it to C#) by forsythe: https://github.com/forsythe/pentago. It's also an Alpha-Beta Pruning algorithm, but its huerstic evaluation is significantly faster thanks to the way it represents the board state. Regardless of the algorithm, there needs to be some way of counting lines of 3, 4, and 5 pieces. Iterating through every index of an array to check for lines is too slow. The brilliance of forsythe's algorithm is that it uses bitboards to represent the board state, allowing for the use of bitwise operations to check for lines.
+export const aIIntroDescription: string = `I tried a number of unsucessful algorithms, namely Alpha-Beta Pruning and Monte Carlo Tree Search, before finding success with this Java implementation (and converting it to C#) by forsythe: https://github.com/forsythe/pentago. It's also an Alpha-Beta Pruning algorithm, but its huerstic evaluation is significantly faster thanks to the way it represents the board state. Regardless of the algorithm, there needs to be some way of counting lines of 3, 4, and 5 pieces. Iterating through every index of an array to check for lines is too slow. The brilliance of forsythe's algorithm is that it uses bitboards to represent the board state, allowing for the use of bitwise operations to check for lines.
 
 The implementation represents a board as a length-two array of longs, one for the white pieces and one for the black pieces. The longs have a digit for every cell, and 1 represents a piece in that cell. Every possible 3, 4, and 5 in-a-line is represented as a mask, and the bitwise AND of a mask and a board will be non-zero if the board contains that line. Therefore, checking for a winner is as simple as iterating through the masks for 5-in-a-line.
 `;
