@@ -1,13 +1,14 @@
-import {Behaviour, Component, serializable, Rigidbody, Animator, Input, Physics, KeyCode , AssetReference, InstantiateOptions} from "@needle-tools/engine";
-import { Object3D, Vector3, Quaternion } from "three";
-import { Shovel } from "./shovel";
-import { lerp } from "three/src/math/MathUtils";
+import {Behaviour, serializable} from "@needle-tools/engine";
+import { Object3D, Vector3} from "three";
+import Item from "./item";
 
-export class PentagoBoardAnimator extends Behaviour {
+
+export class PentagoBoardAnimator extends Item {
     @serializable(Object3D)
     quadrant: Object3D [] | null = null;
     @serializable(Object3D)
     board: Object3D | null = null;
+
     private currentQuadrant: number = 0;
     private speed: number = 2;
     private isQuadrantRaised: boolean = false;
@@ -17,6 +18,7 @@ export class PentagoBoardAnimator extends Behaviour {
     private lerpEndPosition: Vector3 = new Vector3(0,0,0);
     private lerpHeight: number = 1;
     private lastRotation: number = 0;
+
 
     start() {
         this.lerpStartPosition.y = this.quadrant![this.currentQuadrant].position.y;
@@ -36,7 +38,6 @@ export class PentagoBoardAnimator extends Behaviour {
                 this.lastRotation += Math.PI / 2; 
             }
         }
-        console.log("Current quadrant: ", this.currentQuadrant);
         if (!this.isQuadrantRaised) {
             this.raiseQuadrant();
         }
@@ -72,7 +73,6 @@ export class PentagoBoardAnimator extends Behaviour {
         // Define the target rotation angle (in radians) - 90 degrees
         const targetRotation = Math.PI / 2; // 90 degrees in radians
         
-    
         // Get the current rotation of the quadrant
         let currentRotation = this.quadrant![this.currentQuadrant].rotation.y;
     
@@ -93,6 +93,5 @@ export class PentagoBoardAnimator extends Behaviour {
             this.isQuadrantRotated = true;
         }
     }
-    
 }
  

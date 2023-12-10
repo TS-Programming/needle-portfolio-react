@@ -37,7 +37,7 @@ export class PlayerController extends Behaviour {
         // window.addEventListener('keyup', this.onKeyUp.bind(this));
 
         const options = new InstantiateOptions();
-        options.visible = false;
+        options.visible = true;
 
         //get random object from list
         let randomIndex = Math.floor(Math.random() * this.myPrefab!.length);
