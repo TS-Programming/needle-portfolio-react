@@ -1,4 +1,4 @@
-import {Behaviour, serializable, Animator} from "@needle-tools/engine";
+import {Behaviour, serializable, Animator, ParticleSystem} from "@needle-tools/engine";
 import { Object3D, Quaternion, Vector3, Vector4} from "three";
 
 export default class Item extends Behaviour {
@@ -14,4 +14,6 @@ export default class Item extends Behaviour {
 
     @serializable(Vector3) pullScale?: Vector3;
     @serializable(Vector3) dislayScale?: Vector3;
+
+    @serializable(Object3D) description?: Object3D;
 }

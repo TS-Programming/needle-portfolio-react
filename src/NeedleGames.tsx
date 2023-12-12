@@ -9,13 +9,9 @@ const NeedleGames = () => {
 
 
     return(
-        // <Box id="container" className="needle-container">
-        //     <NeedleEngine style={{ position: "relative", display: "flex" }} loading-style="dark"></NeedleEngine>
-        // </Box>
-        <Box id="container" className="needle-container" style={{ pointerEvents: 'none' }}>
+        <Box id="container" className="needle-container" /*style={{ pointerEvents: 'none' }}*/>
             <NeedleEngine style={{ position: 'relative', display: 'flex' }} loading-style="dark"></NeedleEngine>
         </Box>
-
     );
 }
 

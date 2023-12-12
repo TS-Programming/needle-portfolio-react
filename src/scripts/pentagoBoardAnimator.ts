@@ -54,6 +54,7 @@ export class PentagoBoardAnimator extends Item {
             this.quadrant![this.currentQuadrant].position.y += this.speed * this.context.time.deltaTime;
         }
         else {
+            this.quadrant![this.currentQuadrant].position.y = this.lerpEndPosition.y
             this.isQuadrantRaised = true;
         }
     }
@@ -63,6 +64,7 @@ export class PentagoBoardAnimator extends Item {
             this.quadrant![this.currentQuadrant].position.y -= this.speed * this.context.time.deltaTime;
         }
         else {
+            this.quadrant![this.currentQuadrant].position.y = this.lerpStartPosition.y
             this.isQuadrantDone = true;
             this.isQuadrantRaised = false;
             this.isQuadrantRotated = false;
@@ -90,6 +92,7 @@ export class PentagoBoardAnimator extends Item {
             }
         } else {
             // Rotation completed
+            this.quadrant![this.currentQuadrant].rotation.y = this.lastRotation + targetRotation
             this.isQuadrantRotated = true;
         }
     }
