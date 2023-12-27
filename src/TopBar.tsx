@@ -15,7 +15,6 @@ const TopBar: React.FC = () => {
   };
   
   return (
-    // <Flex as="nav" p={4} justifyContent="center" bg="#303030" alignItems="center" h="64px">
     <Flex
       as="nav"
       position="fixed" // Fixed position
