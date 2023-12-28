@@ -1,12 +1,9 @@
 import React from 'react';
-import {
-  Box,
-  Container,
-} from '@chakra-ui/react';
+import {Box, Container} from '@chakra-ui/react';
 import ABOUT_TEXT from './about';
 import GAME_GRID from './gameGrid';
 import NEEDLE_GAMES from '../NeedleGames';
-import TOP_BAR from '../TopBar';
+import TOP_BAR from '../Components/TopBar';
 import BANNER from '../Components/Banner';
 
 export default function Home() {
@@ -38,5 +35,3 @@ export default function Home() {
     </Container>
   );
 }
-
-//export default Home;

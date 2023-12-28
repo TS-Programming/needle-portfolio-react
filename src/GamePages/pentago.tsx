@@ -2,7 +2,7 @@ import React from 'react';
 import { Box, Container, AspectRatio, Text, Grid } from '@chakra-ui/react';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { dark } from 'react-syntax-highlighter/dist/esm/styles/prism';
-import TOP_BAR from '../TopBar';
+import TOP_BAR from '../Components/TopBar';
 import Collapsible_Component from '../Components/CollapsibleComponent';
 import Download_Link from '../Components/DownloadLink';
 import { IoIosPlay } from "react-icons/io";

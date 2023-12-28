@@ -2,13 +2,13 @@ import React from 'react';
 import { Box, Container, AspectRatio, Text, Grid, Image } from '@chakra-ui/react';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { dark } from 'react-syntax-highlighter/dist/esm/styles/prism';
-import TOP_BAR from '../TopBar';
+import TOP_BAR from '../Components/TopBar';
 import Collapsible_Component from '../Components/CollapsibleComponent';
 import Download_Link from '../Components/DownloadLink';
 import { IoIosPlay } from "react-icons/io";
 import { DiCode } from "react-icons/di";
 import {setCameraSnippet, updateCameraSnippet, introDescription, setCameraDescription} from '../CodeSnippets/trophyCaseSnippets';
-import {siteIntroDescription} from '../CodeSnippets/websiteSnippets';
+import {siteIntroDescription, homeSnippet, collapsibleScriptDescription, collapsibleScriptSnippet, collapsibleUsageDescription, collapsibleUsageSnippet} from '../CodeSnippets/websiteSnippets';
 
 const MakingTheSite = () => {
   const youtubeEmbedUrl = "https://www.youtube.com/embed/FZ9cQwlkE9E?si=grzrClX3MkCUWOsL";
@@ -42,12 +42,6 @@ const MakingTheSite = () => {
     <Text mb="8">I made this website to display my portfolio pieces and give some explanation to how I made them. Funny enough, the website itself is a portfolio piece, so please enjoy learning how I made it, including the "Trophy Case" display on the home page. </Text>
 
     <Image src="https://i.imgur.com/iBtiJj9.jpg" alt="Pentago" mb="8" />
-        {/* <AspectRatio ratio={16 / 9} maxWidth="900px" width="full" margin="auto">
-          <iframe
-            src={youtubeEmbedUrl}
-            frameBorder="0"
-            allowFullScreen />
-        </AspectRatio> */}
 
         <Collapsible_Component showText="View 'Trophy Case' Snippets" buttonIcon={DiCode} iconSize="32px">
           <Text whiteSpace="pre-wrap" fontSize="lg" textAlign="left" mb="8"> {introDescription.trim()}</Text>
@@ -59,8 +53,11 @@ const MakingTheSite = () => {
 
         <Collapsible_Component showText="View Website Snippets" buttonIcon={DiCode} iconSize="32px">
           <Text whiteSpace="pre-wrap" fontSize="lg" textAlign="left" mb="8"> {siteIntroDescription.trim()}</Text>
-          <SyntaxHighlighter language="csharp" style={dark}>{updateCameraSnippet.trim()}</SyntaxHighlighter>
-          {/* <Text whiteSpace="pre-wrap" fontSize="lg" textAlign="left" mb="8" mt="8"> {aiOutro.trim()}</Text> */}
+          <SyntaxHighlighter language="typescript" style={dark}>{homeSnippet.trim()}</SyntaxHighlighter>
+          <Text whiteSpace="pre-wrap" fontSize="lg" textAlign="left" mb="8" mt="8"> {collapsibleUsageDescription.trim()}</Text>
+          <SyntaxHighlighter language="typescript" style={dark}>{collapsibleUsageSnippet.trim()}</SyntaxHighlighter>
+          <Text whiteSpace="pre-wrap" fontSize="lg" textAlign="left" mb="8" mt="8"> {collapsibleScriptDescription.trim()}</Text>
+          <SyntaxHighlighter language="typescript" style={dark}>{collapsibleScriptSnippet.trim()}</SyntaxHighlighter>
         </Collapsible_Component>
       </Box>
     </Container>

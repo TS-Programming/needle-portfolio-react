@@ -1,8 +1,85 @@
-export const siteIntroDescription: string = `The Trophy Case is an interactive 3D component of my portfolio that that displays my projects in a unique way. One by one, the user pulls symbols representing my project from a chest and places them on an island. Each item has a discriptive "sign" next to it in world-space which links to a page (like this one) with more information about the project.
-
-Using Unity and the Needle Tools SDK to integrate this component into my react website came with some unique benefits and challenges. As you can see above, the Trophy Case exists as a scene in Unity, however the scripts within are written in TypeScript using the Needle Tools API instead of the typical C#. In pratice this meant taking advantage of Unity's excellent spatial and hierarchical features, but having to program custom scripts in an unfamiliar language. Thankfully I'm experienced in JavaScript, and Needle Tools has a wealth of documentation and support, so the transition was relatively painless. 
-
-In designing the trophy case I realized that I needed to have a scalable solution for adding new items. The key issue is this: While each new item requires a new position/rotation and camera position/rotation in the scene, the code for placing items and switching focus between them should not need to be updated each time. Beyond that is the challenge that since items are revealed over time, each item's camera position must be "locked" until the item is pulled from the chest and placed on an island, however all revealed items must be able to be focused on at any time.
-
-I decided to go with a cycling camera system such that the user can switch between items by pressing left/right, and the last item is adjacent to the first item. I actually achieved this with a recursive solution. Typically, recursion happening within one frame is a bad idea, but since its a small list, it ends up being eloquent and safe. Buttons in the scene call setCamera() with a boolean argument representing left or right. The array of camera positions has parity with an array of booleans representing if a given position is availible or not. If the next postion is not availible, the function calls itself until it finds the next availible position in the cycle.
+export const siteIntroDescription: string = `The first time I ever used HTML and CSS, years ago, I hated the workflow. It was so hard to see what was going on in the increasingly nested components. However, after learning react in college, I became fond of front-end development. Not only is there a wealth of component libraries like MUI and Chakra UI, but abstracting my own custom, sometimes robust comonents into their own files makes the code much more readable. My home page is the most complex page on my site, yet the home.tsx script is less than 40 lines.
 `;
+
+export const homeSnippet: string = `    
+import React from 'react';
+import {Box, Container} from '@chakra-ui/react';
+import ABOUT_TEXT from './about';
+import GAME_GRID from './gameGrid';
+import TROPHY_CASE from '../TrophyCase';
+import TOP_BAR from '../Components/TopBar';
+import BANNER from '../Components/Banner';
+
+export default function Home() {
+  return (
+    <Container maxW="100%" p={0} pt="64px">
+      <TOP_BAR/>
+      <Box>
+        <BANNER 
+          id="featured-section" 
+          title="Featured Project" 
+          subTitle="This chest contains items from each of my portfolio pieces. Click on the description of an item to go to a page providing development details!"
+        />
+        <TROPHY_CASE/>
+        <Box id="about-section">
+          <ABOUT_TEXT/>
+        </Box>
+        <BANNER
+          id="games-section"
+          title="My Games"
+          subTitle="Click on the tiles to learn more about each project."
+        />  
+        <GAME_GRID/>
+      </Box>
+    </Container>
+  );
+}`;
+
+
+export const collapsibleScriptDescription: string = `If we peak at the code for the COLLAPSIBLE_COMPONENT, we can see the redundancies avoided by using the custom component instead of repeating the same code every time we want to use a collapsible section. Also, notice useState, which is a react hook that faciliatates the distinctions between the collapsed and expanded states. Hooks are the hallmark of react and I love them!
+`;
+
+export const collapsibleScriptSnippet: string = ` 
+import React, { useState, ReactNode } from 'react';
+import { Box, Button, Collapse, Icon } from '@chakra-ui/react';
+import { ChevronDownIcon, ChevronUpIcon } from '@chakra-ui/icons';
+
+interface CollapsibleComponentProps {
+  children: ReactNode;
+  showText: string;
+  buttonIcon: React.ElementType; // Type for custom icon
+}
+
+const CollapsibleComponent: React.FC<CollapsibleComponentProps> = ({ children, showText, buttonIcon,  iconSize = '1em' }) => {
+  const [show, setShow] = useState(false);
+  const handleToggle = () => setShow(!show);
+  
+  return (
+    <Box>
+    <Button onClick={handleToggle} mt="1rem" w="full" rightIcon={show ? <ChevronUpIcon /> : <ChevronDownIcon />}>
+    <Icon as={buttonIcon} mr="2" boxSize={iconSize} />
+    {showText}
+    </Button>
+    <Collapse in={show}>
+    <Box p="40px" mt="4" rounded="md" shadow="md">
+    {children}
+    </Box>
+    </Collapse>
+    </Box>
+    );
+  };
+  
+  export default CollapsibleComponent;`;
+  
+  
+export const collapsibleUsageDescription: string = `Take the collapisible section containing the text and code snippets your reading right now for example. In the script for this page, all I have to do is pass a few props to my custom COLLAPSIBLE_COMPONENT, and nest all the content within.`;
+  
+export const collapsibleUsageSnippet: string = ` 
+<COLLAPSIBLE_COMPONENT showText="View Website Snippets" buttonIcon={DiCode} iconSize="32px">
+  <Text whiteSpace="pre-wrap" fontSize="lg" textAlign="left" mb="8"> {siteIntroDescription.trim()}</Text>
+  <SyntaxHighlighter language="typescript" style={dark}>{homeSnippet.trim()}</SyntaxHighlighter>
+  <Text whiteSpace="pre-wrap" fontSize="lg" textAlign="left" mb="8" mt="8"> {collapsibleUsageDescription.trim()}</Text>
+  <SyntaxHighlighter language="typescript" style={dark}>{collapsibleUsageSnippet.trim()}</SyntaxHighlighter>
+  <Text whiteSpace="pre-wrap" fontSize="lg" textAlign="left" mb="8" mt="8"> {collapsibleScriptDescription.trim()}</Text>
+  <SyntaxHighlighter language="typescript" style={dark}>{collapsibleScriptSnippet.trim()}</SyntaxHighlighter>
+</COLLAPSIBLE_COMPONENT>`;

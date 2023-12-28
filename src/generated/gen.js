@@ -2,14 +2,14 @@
 
 export const needle_exported_files = new Array();
 globalThis["needle:codegen_files"] = needle_exported_files;
-needle_exported_files.push("assets/floatingChest.glb?v=1703635752210");
+needle_exported_files.push("assets/floatingChest.glb?v=1703719917000");
 
 document.addEventListener("DOMContentLoaded", () =>
 {
 	const needleEngine = document.querySelector("needle-engine");
 	if(needleEngine && needleEngine.getAttribute("src") === null)
 	{
-		needleEngine.setAttribute("hash", "1703635752210");
+		needleEngine.setAttribute("hash", "1703719917000");
 		needleEngine.setAttribute("src", JSON.stringify(needle_exported_files));
 	}
 });
