@@ -15,18 +15,9 @@ export class Chest extends Behaviour {
     item?: AssetReference [] | null = null;
 
     private pool: Object3D[] = [];
-    //private isCamActive: boolean[] = [false, true, false];
-    // private activeCams: Object3D[] = [];
-    // private activeCamButtons: Object3D[] = [];
 
     @serializable(Object3D)
     restingPoint: Object3D[] | null = null;
-
-    // @serializable(Object3D)
-    // camPosition: Object3D[] | null = null;
-
-    // @serializable(Object3D)
-    // camButtons: Object3D[] | null = null;
 
     @serializable(Object3D)
     itemDescription: Object3D[] | null = null;
@@ -86,7 +77,7 @@ export class Chest extends Behaviour {
         //window.addEventListener('keydown', this.onKeyDown.bind(this));
 
         const options = new InstantiateOptions();
-        //options.visible = true;
+        //options.visible = false;
 
         // pool the objects
         for (let i = 0; i <this.item!.length; i++) {
@@ -162,8 +153,8 @@ export class Chest extends Behaviour {
             console.log("pulled Item: ", this.pulledItem?.name);
             this.itemData = GameObject.getComponent(this.pulledItem, Item);
             console.log(this.pulledItem);
+            //this.pulledItem!.visible = false;
             this.pulledItem?.position.copy(this.pullPoint!.position); 
-            this.pulledItem!.visible = false;
             this.lastObjectRotation = this.pulledItem!.quaternion.clone();
             this.lastObjectScale = this.pulledItem!.scale.clone();
             this.animator?.play("Fantasy_Polygon_Chest_Animation");
