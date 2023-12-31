@@ -3,9 +3,9 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Home from './Home/home';
 import Pentago from './GamePages/pentago';
-import MiniGames from './GamePages/miniGames';
-import TopBar from './TopBar';
-import { ScrollProvider } from './ScrollContext';
+import MakingTheSite from './GamePages/makingTheSite';
+// import TopBar from './TopBar';
+// import { ScrollProvider } from './ScrollContext';
 
 import {
   ChakraProvider,
@@ -36,7 +36,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/pentago" element={<Pentago />} />
-            <Route path="/mini-games" element={<MiniGames />} />
+            <Route path="/making-the-site" element={<MakingTheSite />} />
           </Routes>
         </Router>
       {/* </ScrollProvider> */}

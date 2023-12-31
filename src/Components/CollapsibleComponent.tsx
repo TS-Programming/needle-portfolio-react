@@ -10,7 +10,6 @@ interface CollapsibleComponentProps {
 
 const CollapsibleComponent: React.FC<CollapsibleComponentProps> = ({ children, showText, buttonIcon,  iconSize = '1em' }) => {
   const [show, setShow] = useState(false);
-
   const handleToggle = () => setShow(!show);
 
   return (
@@ -29,4 +28,3 @@ const CollapsibleComponent: React.FC<CollapsibleComponentProps> = ({ children, s
 };
 
 export default CollapsibleComponent;
-

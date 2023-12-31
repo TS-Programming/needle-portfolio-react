@@ -16,37 +16,37 @@ const GameGrid = () => {
         {
             imageUrl: "https://i.imgur.com/urYpgfy.png",
             linkUrl: "/pentago",
-            gameTags: ["Multiplayer", "Multiple Platforms", "Mobile"],
-            description: "A simple, but deep strategy game to play against the computer or a friend.",
+            gameTags: ["Multiplayer", "Challenging AI", "Multi-Platform"],
+            description: "Pentago is a simple, but deep strategy game to play against the computer or a friend.",
             features: ["3D adaptation of Pentago, playable on both mobile and desktop with dynamic camera perspectives", 
                         "Highly polished presentation with charming music and sound effects",
                         "Advanced AI opponent with asynchronous Min-Max and Alpha-Beta pruning mechanics"],
-            // bannerLabel: "New Release"
+            bannerLabel: "Play now!"
         },
         {
-            imageUrl: "https://lineinlime.com/wp-content/uploads/2018/05/image_20180518_104325.jpg",
-            linkUrl: "/mini-games",
-            gameTags: ["Action", "Multiplayer"],
-            description: "Short game description.",
-            features: ["Feature 1", "Feature 2"],
-            bannerLabel: "New Release"
-        },
-        {
-            imageUrl: "https://lineinlime.com/wp-content/uploads/2018/05/image_20180518_104325.jpg",
-            linkUrl: "/game-page-1",
-            gameTags: ["Action", "Multiplayer"],
-            description: "Short game description.",
-            features: ["Feature 1", "Feature 2"],
-            bannerLabel: "New Release"
-        },
-        {
-            imageUrl: "https://lineinlime.com/wp-content/uploads/2018/05/image_20180518_104325.jpg",
-            linkUrl: "/game-page-1",
-            gameTags: ["Action", "Multiplayer"],
-            description: "Short game description.",
-            features: ["Feature 1", "Feature 2"],
-            bannerLabel: "New Release"
-        }
+            imageUrl: "https://i.imgur.com/6wQQTrG.jpg",
+            linkUrl: "/making-the-site",
+            gameTags: ["ReactJS", "TypeScript" , "Unity", "Needle Tools"],
+            description: "How I made my website.",
+            features: ["3D graphics centerpiece with links to portfolio pages", "Custom ReactJS site"],
+            bannerLabel: "This site"
+        }//,
+        // {
+        //     imageUrl: "https://lineinlime.com/wp-content/uploads/2018/05/image_20180518_104325.jpg",
+        //     linkUrl: "/game-page-1",
+        //     gameTags: ["Action", "Multiplayer"],
+        //     description: "Short game description.",
+        //     features: ["Feature 1", "Feature 2"],
+        //     bannerLabel: "New Release"
+        // },
+        // {
+        //     imageUrl: "https://lineinlime.com/wp-content/uploads/2018/05/image_20180518_104325.jpg",
+        //     linkUrl: "/game-page-1",
+        //     gameTags: ["Action", "Multiplayer"],
+        //     description: "Short game description.",
+        //     features: ["Feature 1", "Feature 2"],
+        //     bannerLabel: "New Release"
+        // }
     ];
 
     return (
@@ -54,6 +54,7 @@ const GameGrid = () => {
             templateColumns={{ base: 'repeat(1, 1fr)', md: 'repeat(3, 1fr)' }}
             gap={6}
             margin="0 auto"
+            mt = "50px"
             width="calc(100% - 48px)"
             maxWidth="1200px"
             overflowX="hidden"
