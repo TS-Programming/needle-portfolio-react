@@ -35,8 +35,8 @@ function App() {
         <Router>
           <Routes>
             <Route path="/needle-portfolio-react/" element={<Home />} />
-            <Route path="/needle-portfolio-react/pentago" element={<Pentago />} />
-            <Route path="/needle-portfolio-react/making-the-site" element={<MakingTheSite />} />
+            <Route path="/needle-portfolio-react/pentago/" element={<Pentago />} />
+            <Route path="/needle-portfolio-react/making-the-site/" element={<MakingTheSite />} />
           </Routes>
         </Router>
       {/* </ScrollProvider> */}
