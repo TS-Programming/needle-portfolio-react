@@ -15,7 +15,7 @@ const GameGrid = () => {
     const gameData = [
         {
             imageUrl: "https://i.imgur.com/urYpgfy.png",
-            linkUrl: "/pentago",
+            linkUrl: "https://ts-programming.github.io/needle-portfolio-react/#/pentago",
             gameTags: ["Multiplayer", "Challenging AI", "Multi-Platform"],
             description: "Pentago is a simple, but deep strategy game to play against the computer or a friend.",
             features: ["3D adaptation of Pentago, playable on both mobile and desktop with dynamic camera perspectives", 
@@ -25,7 +25,7 @@ const GameGrid = () => {
         },
         {
             imageUrl: "https://i.imgur.com/6wQQTrG.jpg",
-            linkUrl: "/making-the-site",
+            linkUrl: "https://ts-programming.github.io/needle-portfolio-react/#/making-the-site",
             gameTags: ["ReactJS", "TypeScript" , "Unity", "Needle Tools"],
             description: "How I made my website.",
             features: ["3D graphics centerpiece with links to portfolio pages", "Custom ReactJS site"],

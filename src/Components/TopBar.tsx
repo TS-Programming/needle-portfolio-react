@@ -50,7 +50,7 @@ const TopBar: React.FC = () => {
         >
           Games
         </Button>
-        <a href="/pdf/resume-fall-2023.pdf" target="_blank" rel="noopener noreferrer">
+        <a href="/needle-portfolio-react/pdf/resume-fall-2023.pdf" target="_blank" rel="noopener noreferrer">
           <Button
             color="white"
             variant="ghost"
