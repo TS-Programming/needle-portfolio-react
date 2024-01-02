@@ -1,6 +1,7 @@
 
 import React from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+//import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { HashRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from './Home/home';
 import Pentago from './GamePages/pentago';
 import MakingTheSite from './GamePages/makingTheSite';
@@ -29,19 +30,31 @@ function App() {
     },
   });
 
+  // return (
+  //   <ChakraProvider theme={theme}>
+  //       <Router>
+  //         <Routes>
+  //           <Route path="/needle-portfolio-react/" element={<Home />} />
+  //           <Route path="/#/needle-portfolio-react/pentago/" element={<Pentago />} />
+  //           <Route path="/#/needle-portfolio-react/making-the-site/" element={<MakingTheSite />} />
+  //         </Routes>
+  //       </Router>
+  //  </ChakraProvider>
+  // );
+  
   return (
     <ChakraProvider theme={theme}>
-      {/* <ScrollProvider > */}
-        <Router>
-          <Routes>
-            <Route path="/needle-portfolio-react/" element={<Home />} />
-            <Route path="/#/needle-portfolio-react/pentago/" element={<Pentago />} />
-            <Route path="/#/needle-portfolio-react/making-the-site/" element={<MakingTheSite />} />
-          </Routes>
-        </Router>
-      {/* </ScrollProvider> */}
+      <Router>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/pentago" element={<Pentago />} />
+          <Route path="/making-the-site" element={<MakingTheSite />} />
+        </Routes>
+      </Router>
    </ChakraProvider>
   );
+
+
 }
 
 export default App;
