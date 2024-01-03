@@ -1,12 +1,13 @@
 {
-  "allowHotReload": true,
   "gzip": false,
-  "generator": "Unity 2022.3.12f1, Needle Engine Integration @3.23.0",
+  "generator": "Unity 2022.3.12f1, Needle Engine Integration @3.28.7",
+  "allowHotReload": true,
+  "facebookInstantGames": null,
   "useRapier": true,
   "license": null,
   "needleEditor": null,
-  "sceneName": "Floating Chest",
+  "sceneName": "Tanner Samples Portfolio",
   "meta": null,
-  "absolutePath": "https://TS-Programming.github.io/needle-portfolio-react",
+  "absolutePath": "https://localhost:3000",
   "deployOnly": false
 }

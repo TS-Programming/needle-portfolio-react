@@ -11,19 +11,19 @@
     "gltf:transform": "npm run transform --prefix node_modules/@needle-tools/gltf-build-pipeline"
   },
   "dependencies": {
-    "@chakra-ui/icons": "^2.1.1",
-    "@chakra-ui/react": "^2.8.1",
-    "@emotion/react": "^11.11.1",
-    "@emotion/styled": "^11.11.0",
-    "@needle-tools/engine": "^3.23.0",
-    "framer-motion": "^10.16.4",
-    "react": "^18.0.0",
-    "react-dom": "^18.0.0",
-    "react-icons": "^4.12.0",
-    "react-router-dom": "^6.16.0",
-    "react-syntax-highlighter": "^15.5.0",
-    "three": "npm:@needle-tools/three@^0.154.3"
-  },
+	  "@chakra-ui/icons": "^2.1.1",
+	  "@chakra-ui/react": "^2.8.1",
+	  "@emotion/react": "^11.11.1",
+	  "@emotion/styled": "^11.11.0",
+	  "@needle-tools/engine": "^3.28.7",
+	  "framer-motion": "^10.16.4",
+	  "react": "^18.0.0",
+	  "react-dom": "^18.0.0",
+	  "react-icons": "^4.12.0",
+	  "react-router-dom": "^6.16.0",
+	  "react-syntax-highlighter": "^15.5.0",
+	  "three": "npm:@needle-tools/three@^0.154.3"
+	},
   "devDependencies": {
     "@needle-tools/helper": "^1.6.0",
     "@types/three": "0.154.0",
