@@ -74,35 +74,36 @@ export class Chest extends Behaviour {
 
 
     async start() {
-        //window.addEventListener('keydown', this.onKeyDown.bind(this));
+        console.log("chest start");
+    //     //window.addEventListener('keydown', this.onKeyDown.bind(this));
 
-        const options = new InstantiateOptions();
-        //options.visible = false;
+    //     const options = new InstantiateOptions();
+    //     //options.visible = false;
 
-        // pool the objects
-        for (let i = 0; i <this.item!.length; i++) {
-            let toSpawn = this.item![i];
-            const myInstance = await toSpawn?.instantiate(options);
-            if (myInstance) {
-                myInstance.visible = false;
-                this.pool.push(myInstance);
-                //console.log(myInstance)
-            }
-        }
-        //this.animator?.play("Close_Lid");
-        await this.delay(250); 
-        this.isDroppingChest = true;
-    }
+    //     // pool the objects
+    //     for (let i = 0; i <this.item!.length; i++) {
+    //         let toSpawn = this.item![i];
+    //         const myInstance = await toSpawn?.instantiate(options);
+    //         if (myInstance) {
+    //             myInstance.visible = false;
+    //             this.pool.push(myInstance);
+    //             //console.log(myInstance)
+    //         }
+    //     }
+    //     //this.animator?.play("Close_Lid");
+    //     await this.delay(250); 
+    //     this.isDroppingChest = true;
+    // }
 
-    getObject(): Object3D | null {
-        const obj = this.pool.pop();
-        if (obj) {
-            return obj;
-        } 
-        else {
-            console.error("No more objects in pool");
-            return null
-        }
+    // getObject(): Object3D | null {
+    //     const obj = this.pool.pop();
+    //     if (obj) {
+    //         return obj;
+    //     } 
+    //     else {
+    //         console.error("No more objects in pool");
+    //         return null
+    //     }
     }
 
 
@@ -132,92 +133,92 @@ export class Chest extends Behaviour {
     }
 
     update()   {
-        if(this.currentObjectIndex >= this.restingPoint!.length) return;
-        if(this.isDroppingChest){
-            this.dropChest();
-        }
-        else if (this.wantsToOpen && this.isDisplayingItem) {
-            this.releaseItem();
-        }
-        else if (this.wantsToOpen && !this.chestIsOpen) {
-             //this.chestIsOpen = true;
-         //rthis.animator?.play("Fantasy_Polygon_Chest_Animation");
-            this.pullItem();
-        }
-        else
-            console.log("update");
+        // if(this.currentObjectIndex >= this.restingPoint!.length) return;
+        // if(this.isDroppingChest){
+        //     this.dropChest();
+        // }
+        // else if (this.wantsToOpen && this.isDisplayingItem) {
+        //     this.releaseItem();
+        // }
+        // else if (this.wantsToOpen && !this.chestIsOpen) {
+        //      //this.chestIsOpen = true;
+        //  //rthis.animator?.play("Fantasy_Polygon_Chest_Animation");
+        //     this.pullItem();
+        // }
+        // else
+        //     console.log("update");
     }
 
 
-    pullItem() {
-        if(this.pulledItem === null) {
-            this.pulledItem = this.getObject();   
-            console.log("pulled Item: ", this.pulledItem?.name);
-            this.itemData = GameObject.getComponent(this.pulledItem, Item);
-            console.log(this.pulledItem);
-            //this.pulledItem!.visible = false;
-            this.pulledItem?.position.copy(this.pullPoint!.position); 
-            this.lastObjectRotation = this.pulledItem!.quaternion.clone();
-            this.lastObjectScale = this.pulledItem!.scale.clone();
-            this.animator?.play("Fantasy_Polygon_Chest_Animation");
-        }
-        else if(this.animationTime < 2) {
-            this.animationTime += this.context.time.deltaTime;
+    // pullItem() {
+    //     if(this.pulledItem === null) {
+    //         this.pulledItem = this.getObject();   
+    //         console.log("pulled Item: ", this.pulledItem?.name);
+    //         this.itemData = GameObject.getComponent(this.pulledItem, Item);
+    //         console.log(this.pulledItem);
+    //         //this.pulledItem!.visible = false;
+    //         this.pulledItem?.position.copy(this.pullPoint!.position); 
+    //         this.lastObjectRotation = this.pulledItem!.quaternion.clone();
+    //         this.lastObjectScale = this.pulledItem!.scale.clone();
+    //         this.animator?.play("Fantasy_Polygon_Chest_Animation");
+    //     }
+    //     else if(this.animationTime < 2) {
+    //         this.animationTime += this.context.time.deltaTime;
             
-            return;
-        }
-       // this.animationTime = 0
-        let alpha = 0.0;
-        if(!this.isInRaisedState){
-            this.pulledItem!.visible = true;
-            this.raiseLerpAlpha += this.context.time.deltaTime * 0.4;
-            alpha = this.raiseLerpAlpha / this.timeToLerp;
+    //         return;
+    //     }
+    //    // this.animationTime = 0
+    //     let alpha = 0.0;
+    //     if(!this.isInRaisedState){
+    //         this.pulledItem!.visible = true;
+    //         this.raiseLerpAlpha += this.context.time.deltaTime * 0.4;
+    //         alpha = this.raiseLerpAlpha / this.timeToLerp;
             
-            // Calculate new position
-            let newPosition = this.pullPoint?.position.clone().lerp(this.raisePoint!.position, alpha);
-            //Update object's position
-            this.pulledItem!.position.copy(newPosition!);
+    //         // Calculate new position
+    //         let newPosition = this.pullPoint?.position.clone().lerp(this.raisePoint!.position, alpha);
+    //         //Update object's position
+    //         this.pulledItem!.position.copy(newPosition!);
 
-            if(this.raiseLerpAlpha >= this.timeToLerp){
-                this.isInRaisedState = true;
-                alpha = 0.0;
-            }
-        }
-        else if (this.lerpAlpha < this.timeToLerp){ //lerp to display point
-            //this.animationTime = 0
-            this.lerpAlpha += this.context.time.deltaTime * 0.7;
+    //         if(this.raiseLerpAlpha >= this.timeToLerp){
+    //             this.isInRaisedState = true;
+    //             alpha = 0.0;
+    //         }
+    //     }
+    //     else if (this.lerpAlpha < this.timeToLerp){ //lerp to display point
+    //         //this.animationTime = 0
+    //         this.lerpAlpha += this.context.time.deltaTime * 0.7;
             
-            alpha = this.lerpAlpha / this.timeToLerp;
+    //         alpha = this.lerpAlpha / this.timeToLerp;
 
 
-            // Calculate new position
-            let newPosition = this.raisePoint?.position.clone().lerp(this.displayPoint!.position, alpha);
-            //Update object's position
-            this.pulledItem!.position.copy(newPosition!);
+    //         // Calculate new position
+    //         let newPosition = this.raisePoint?.position.clone().lerp(this.displayPoint!.position, alpha);
+    //         //Update object's position
+    //         this.pulledItem!.position.copy(newPosition!);
 
-            //90 degrees about x/z axis
-            let q = new Quaternion();
+    //         //90 degrees about x/z axis
+    //         let q = new Quaternion();
             
-            //q.setFromAxisAngle(new Vector3(1, 0, 0), -Math.PI / 2);
-            q.setFromAxisAngle(this.itemData!.displayRotationAxis!, this.itemData!.displayRotationAngle!);
-            let newRotation = this.lastObjectRotation.clone().slerp(q, alpha);
-            this.pulledItem!.quaternion.copy(newRotation);
-        }
-        else {
-            this.animationTime = 0
-            alpha = 1;
-            this.lerpAlpha = 0.0;
-            this.raiseLerpAlpha = 0.0;
-            // this.pulledItem = null;
-            this.wantsToOpen = false;
-            this.isDisplayingItem = true;
-            this.chestIsOpen = true;
-            this.chestText!.text = "Place Item";
-            this.chestItemText!.text = this.itemText![this.currentObjectIndex].text;
-            this.chestURL!.url = this.itemURL![this.currentObjectIndex].url;
-            this.chestItemTextObject!.visible = true;
-        }
-    }
+    //         //q.setFromAxisAngle(new Vector3(1, 0, 0), -Math.PI / 2);
+    //         q.setFromAxisAngle(this.itemData!.displayRotationAxis!, this.itemData!.displayRotationAngle!);
+    //         let newRotation = this.lastObjectRotation.clone().slerp(q, alpha);
+    //         this.pulledItem!.quaternion.copy(newRotation);
+    //     }
+    //     else {
+    //         this.animationTime = 0
+    //         alpha = 1;
+    //         this.lerpAlpha = 0.0;
+    //         this.raiseLerpAlpha = 0.0;
+    //         // this.pulledItem = null;
+    //         this.wantsToOpen = false;
+    //         this.isDisplayingItem = true;
+    //         this.chestIsOpen = true;
+    //         this.chestText!.text = "Place Item";
+    //         this.chestItemText!.text = this.itemText![this.currentObjectIndex].text;
+    //         this.chestURL!.url = this.itemURL![this.currentObjectIndex].url;
+    //         this.chestItemTextObject!.visible = true;
+    //     }
+    // }
 
     flag: boolean = false;
 
