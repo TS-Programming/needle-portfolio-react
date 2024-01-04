@@ -5,12 +5,14 @@ import GAME_GRID from './gameGrid';
 import NEEDLE_GAMES from '../NeedleGames';
 import TOP_BAR from '../Components/TopBar';
 import BANNER from '../Components/Banner';
+import Stopwatch from '../Components/Stopwatch';
 
 export default function Home() {
 
   return (
     <Container maxW="100%" p={0} pt="64px">
       <TOP_BAR/>
+      <Stopwatch/>
       <Box>
         <BANNER 
           id="featured-section" 

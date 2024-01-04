@@ -144,6 +144,8 @@ export class Chest extends Behaviour {
          //rthis.animator?.play("Fantasy_Polygon_Chest_Animation");
             this.pullItem();
         }
+        else
+            console.log("update");
     }
 
 
