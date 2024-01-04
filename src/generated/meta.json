@@ -8,6 +8,6 @@
   "needleEditor": null,
   "sceneName": "Tanner Samples Portfolio",
   "meta": null,
-  "absolutePath": "https://ts-programming.github.io/my-portfolio.github.io/",
+  "absolutePath": "https://localhost:3000",
   "deployOnly": false
 }
