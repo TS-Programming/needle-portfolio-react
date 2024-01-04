@@ -8,6 +8,6 @@
   "needleEditor": null,
   "sceneName": "Tanner Samples Portfolio",
   "meta": null,
-  "absolutePath": "https://TS-Programming.github.io/needle-portfolio-react",
+  "absolutePath": "https://localhost:3000",
   "deployOnly": false
 }
