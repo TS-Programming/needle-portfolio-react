@@ -74,7 +74,7 @@ export class Chest extends Behaviour {
 
 
     async start() {
-        console.log("chest start");
+        console.log("chest start lag test");
     //     //window.addEventListener('keydown', this.onKeyDown.bind(this));
 
     //     const options = new InstantiateOptions();
