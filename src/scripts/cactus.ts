@@ -5,7 +5,7 @@ import Item from "./item";
 
 export class Cactus extends Item {
     @serializable(Object3D)
-    model: Object3D | null = null;
+    model: Object3D | null = null ;
 
 
     update(){

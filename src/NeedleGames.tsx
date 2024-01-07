@@ -21,23 +21,11 @@ import { NeedleEngine } from './NeedleEngine';
 import { Box, Button } from '@chakra-ui/react';
 
 const NeedleGames = () => {
-  const [isVisible, setIsVisible] = useState(true);
-
-  const toggleVisibility = () => {
-    setIsVisible(!isVisible);
-  };
 
   return (
-    <>
-      <Button onClick={toggleVisibility} mb={4}>
-        {isVisible ? 'Hide Needle Games' : 'Show Needle Games'}
-      </Button>
-      {isVisible && (
-        <Box id="container" className="needle-container">
-          <NeedleEngine style={{ position: 'relative', display: 'flex' }} loading-style="dark"></NeedleEngine>
-        </Box>
-      )}
-    </>
+    <Box id="container" className="needle-container">
+      <NeedleEngine style={{ position: 'relative', display: 'flex' }} loading-style="dark"></NeedleEngine>
+    </Box>
   );
 };
 

@@ -2,7 +2,7 @@
   "name": "my-needle-engine-project",
   "version": "1.0.0",
   "type": "module",
-  "homepage": "https://ts-programming.github.io/needle-portfolio-react/",
+  "homepage": "https://ts-programming.github.io/my-portfolio.github.io/",
   "scripts": {
     "start": "vite --host",
     "build": "vite build",
