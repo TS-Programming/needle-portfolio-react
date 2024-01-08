@@ -6,13 +6,31 @@ import { useNavigate } from 'react-router-dom';
 const TopBar: React.FC = () => {
   const navigate = useNavigate();
 
+  // const navigateAndScroll = (sectionId: string) => {
+  //   navigate('/');
+  //   setTimeout(() => {
+  //     const section = document.getElementById(sectionId);
+  //     section?.scrollIntoView({ behavior: 'smooth' });
+  //   }, 0); // Timeout to allow the DOM to update
+  // };
+
   const navigateAndScroll = (sectionId: string) => {
     navigate('/');
     setTimeout(() => {
       const section = document.getElementById(sectionId);
-      section?.scrollIntoView({ behavior: 'smooth' });
+      if (section) {
+        const topBarHeight = 64; // Height of your top bar in pixels
+        const sectionPosition = section.getBoundingClientRect().top + window.scrollY;
+        const offsetPosition = sectionPosition - topBarHeight;
+  
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: 'smooth'
+        });
+      }
     }, 0); // Timeout to allow the DOM to update
   };
+  
   
   return (
     <Flex
@@ -22,7 +40,7 @@ const TopBar: React.FC = () => {
       left={0} // Align to the left
       right={0} // Align to the right
       zIndex="sticky" // Ensure it stays on top of other content
-      p={4}
+      p={0}
       justifyContent="center"
       bg="#303030"
       alignItems="center"
@@ -50,7 +68,7 @@ const TopBar: React.FC = () => {
         >
           Games
         </Button>
-        <a href="https://raw.githubusercontent.com/TS-Programming/my-portfolio.github.io/main/pdf/resume-tanner-samples-winter-2024" target="_blank" rel="noopener noreferrer">
+        <a href="https://raw.githubusercontent.com/TS-Programming/my-portfolio.github.io/main/pdf/resume-tanner-samples-winter-2024.pdf" target="_blank" rel="noopener noreferrer">
           <Button
             color="white"
             variant="ghost"

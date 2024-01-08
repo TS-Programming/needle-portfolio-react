@@ -14,6 +14,7 @@ const Banner: React.FC<CollapsibleComponentProps> = ({id, title, subTitle }) => 
     <Box
     id={id}
     mt="50px"
+    maxWidth="100%"
     // mb = "100px"
     d="flex"
     flexDirection="column"

@@ -20,7 +20,7 @@ export default function Home() {
 
         <NEEDLE_GAMES/>
 
-        <Box id="about-section">
+        <Box id="about-section" mb="64px">
           <ABOUT_TEXT />
         </Box>
 

@@ -55,7 +55,8 @@ const GameGrid = () => {
             gap={6}
             margin="0 auto"
             mt = "50px"
-            width="calc(100% - 48px)"
+            // width="calc(100% - 48px)"
+            width="100%"
             maxWidth="1200px"
             overflowX="hidden"
         >
